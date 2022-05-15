@@ -18,13 +18,13 @@ def main():
         autoescape=select_autoescape(['html', 'xml'])
     )
     template = file.get_template('template.html')
-    group_wines = defaultdict(list)
+    wines_group = defaultdict(list)
     for reading_files in reading_file:
-       group_wines[reading_files['Категория']].append(wine_files)
+        wines_group[reading_file['Категория']].append(reading_files)
     rendered_page = template.render(
         age=age,
         wines=reading_file,
-        group_wines=group_wines
+        group_wines= wines_group
     )
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
