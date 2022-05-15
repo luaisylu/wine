@@ -3,3 +3,4 @@ env/
 .replit
 index.html
 .breakpoints
+.env
