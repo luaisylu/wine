@@ -1,13 +1,4 @@
-name = "prodaiem-elitnoie-vino"
-version = "0.1.0"
-description = ""
-authors = ["dvmn-tasks <devman-tasks@yandex.ru>"]
-
-[tool.poetry.dependencies]
-python = "^3.8"
-Jinja2 = "^3.0.3"
-DateTime = "^4.3"
-pandas = "^1.3.5"
-xlrd = "^2.0.1"
-openpyxl = "^3.0.9"
-pprint36 = "^3.9.0"
+Jinja2 == 3.0.3
+pandas == 1.3.5
+openpyxl == 3.0.9
+python-dotenv == 0.19.2
