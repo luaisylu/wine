@@ -16,14 +16,14 @@ def main():
     day_the_week = datetime.datetime.today()
     year_foundation = 1920
     age = day_the_week.year-year_foundation
-    reading_file = pandas.read_excel(FILE_NAME_EXCEL, na_values=['N/A', 'NA'], keep_default_na=False).to_dict(orient='record')
+    list_of_wines = pandas.read_excel(FILE_NAME_EXCEL, na_values=['N/A', 'NA'], keep_default_na=False).to_dict(orient='record')
     file = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
     )
     template = file.get_template('template.html')
     wines_group = defaultdict(list)
-    for reading_files in reading_file:
+    for reading_files in list_of_wines:
         wines_group[reading_files['Категория']].append(reading_files)
     rendered_page = template.render(
         age=age,
