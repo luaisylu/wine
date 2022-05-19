@@ -15,7 +15,7 @@ FILE_NAME_EXCEL = os.environ['FILE_NAME_EXCEL']
 def main():
     day_the_week = datetime.datetime.today()
     year_foundation = 1920
-    age = this_year.year-year_foundation
+    age = day_the_week.year-year_foundation
     reading_file = pandas.read_excel(FILE_NAME_EXCEL, na_values=['N/A', 'NA'], keep_default_na=False).to_dict(orient='record')
     file = Environment(
         loader=FileSystemLoader('.'),
